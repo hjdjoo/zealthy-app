@@ -33,6 +33,7 @@ export default function OnboardingContainer(props: OnboardingContainerProps) {
     try {
 
       const formData = new FormData(currentTarget);
+      formData.append("completed_steps", String(step + 1))
       const form = Object.fromEntries(formData.entries());
 
       console.log(form);
@@ -56,7 +57,7 @@ export default function OnboardingContainer(props: OnboardingContainerProps) {
     }
   }
 
-  if (step >= 3) {
+  if (step > 3) {
     return (
       <div id="onboarding-complete" className={`flex flex-col items-center`}>
         <p className={`text-xl font-bold`}>

@@ -5,7 +5,7 @@ export default function AddressForm() {
 
   return (
     <>
-      <p id="address-form" className={`text-xl font-bold underline`}
+      <p id="address-form" className={`text-xl font-bold underline mb-2`}
       > Address: </p>
       <label htmlFor="street-address"
         className={`flex w-full mb-2`}>

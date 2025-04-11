@@ -13,19 +13,19 @@ export type Database = {
         Row: {
           created_at: string
           id: number
-          name: string | null
+          name: string
           onboarding_step: number | null
         }
         Insert: {
           created_at?: string
           id?: number
-          name?: string | null
+          name?: string
           onboarding_step?: number | null
         }
         Update: {
           created_at?: string
           id?: number
-          name?: string | null
+          name?: string
           onboarding_step?: number | null
         }
         Relationships: [
