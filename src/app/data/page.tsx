@@ -1,5 +1,7 @@
 import createClientSupabase from "@/utils/supabase/client"
 
+export const dynamic = "force-dynamic"
+
 export default async function DataPage() {
 
   const supabase = createClientSupabase();
