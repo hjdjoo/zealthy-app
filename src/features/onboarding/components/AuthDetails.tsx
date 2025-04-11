@@ -53,7 +53,7 @@ export default function AuthDetails() {
 
       setUser({ id: data.id })
       const completedSteps = !data.completed_steps ? 1 : data.completed_steps
-      router.push(`${completedSteps + 1}`);
+      router.push(`${completedSteps}`);
 
     } catch (e) {
       console.error(e);
