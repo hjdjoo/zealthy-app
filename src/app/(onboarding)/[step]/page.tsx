@@ -1,6 +1,6 @@
 import createClientSupabase from "@/utils/supabase/client";
 import OnboardingContainer from "@/features/onboarding/containers/Onboarding.Container";
-
+import Stepper from "@/features/onboarding/components/Stepper";
 
 export default async function OnboardingStep(
   { params }:
@@ -22,9 +22,12 @@ export default async function OnboardingStep(
   const components = componentData.map(entry => entry.name).filter(value => value !== null)
 
   return (
-    <>
+    <div className={`flex flex-col`}>
       <OnboardingContainer step={Number(step)} components={components} />
-    </>
+      <br />
+      <br />
+      <Stepper activeStep={Number(step)} />
+    </div>
   )
 
 }

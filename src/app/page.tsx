@@ -1,5 +1,6 @@
 // import Image from "next/image";
 import AuthDetails from "@/features/onboarding/components/AuthDetails";
+import Stepper from "@/features/onboarding/components/Stepper";
 
 export default async function HomePage() {
 
@@ -9,6 +10,9 @@ export default async function HomePage() {
         Welcome Aboard!
       </p>
       <AuthDetails />
+      <br />
+      <br />
+      <Stepper activeStep={1} />
     </div>
   );
 }
