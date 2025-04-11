@@ -2,7 +2,7 @@ export default function Birthdate() {
 
   return (
     <>
-      <input type="date" />
+      <input type="date" name="birthdate" />
     </>
   )
 }

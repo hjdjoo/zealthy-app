@@ -5,10 +5,8 @@ export default async function AdminPage() {
   const supabase = createServiceClient();
 
   const { data, error } = await supabase
-    .from("website_configs")
-    .select("config")
-    .eq("name", "onboarding")
-    .single();
+    .from("onboarding_components")
+    .select("name, onboarding_step")
 
   if (error) {
     console.error(error.cause);
@@ -20,8 +18,8 @@ export default async function AdminPage() {
   console.log(data);
 
   return (
-    <div>
+    <main id="admin-page">
       Admin
-    </div>
+    </main>
   )
 }

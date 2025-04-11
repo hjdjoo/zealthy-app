@@ -61,6 +61,7 @@ export type Database = {
           about_me: string | null
           birthdate: string | null
           city: string | null
+          completed_steps: number
           created_at: string
           email: string
           id: number
@@ -73,6 +74,7 @@ export type Database = {
           about_me?: string | null
           birthdate?: string | null
           city?: string | null
+          completed_steps?: number
           created_at?: string
           email: string
           id?: number
@@ -85,6 +87,7 @@ export type Database = {
           about_me?: string | null
           birthdate?: string | null
           city?: string | null
+          completed_steps?: number
           created_at?: string
           email?: string
           id?: number

@@ -2,12 +2,13 @@
 
 import { FormEvent } from "react";
 import { useRouter } from "next/navigation";
+import { useUser } from "@/contexts/UserContext";
 import createClientSupabase from "@/utils/supabase/client";
-
 
 export default function AuthDetails() {
 
   const router = useRouter();
+  const { setUser } = useUser();
 
   async function handleFormSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -20,7 +21,7 @@ export default function AuthDetails() {
       const { email, password } = form;
 
       const supabase = createClientSupabase();
-
+      // check if user exists; init user if empty response;
       const { data, error } = await supabase
         .from("users")
         .select("*")
@@ -31,23 +32,32 @@ export default function AuthDetails() {
       if (!data) {
         console.log(error.message);
         console.log("No user found - initializing profile..");
-        const { error: insertError } = await supabase
+        const { data, error: insertError } = await supabase
           .from("users")
           .insert({
             email: String(email),
-            password: String(password)
+            password: String(password),
+            completed_steps: 1
           })
+          .select()
+          .single();
 
         if (insertError) {
           console.error(insertError.message);
           throw insertError
         }
+
+        setUser({ id: data.id })
+        router.push(`${data.completed_steps + 1}`);
+        return;
       }
+
+      setUser({ id: data.id })
+      const completedSteps = !data.completed_steps ? 1 : data.completed_steps
+      router.push(`${completedSteps + 1}`);
+
     } catch (e) {
       console.error(e);
-    } finally {
-      currentTarget.reset();
-      router.push("/onboarding/2");
     }
   }
 
