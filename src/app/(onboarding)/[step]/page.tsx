@@ -2,6 +2,8 @@ import createClientSupabase from "@/utils/supabase/client";
 import OnboardingContainer from "@/features/onboarding/containers/Onboarding.Container";
 import Stepper from "@/features/onboarding/components/Stepper";
 
+export const dynamic = "force-dynamic"
+
 export default async function OnboardingStep(
   { params }:
     { params: Promise<{ step: string }> }

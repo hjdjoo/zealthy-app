@@ -45,10 +45,11 @@ export default function EditOnboardingStep(props: OnboardingStepProps) {
       }
 
       router.refresh();
+      currentTarget.reset();
+      return;
 
     } catch (e) {
       console.error(e);
-    } finally {
       currentTarget.reset();
     }
   }
@@ -56,7 +57,7 @@ export default function EditOnboardingStep(props: OnboardingStepProps) {
 
   return (
     <div id={`${component}-information-display`}
-      className={`border border-gray p-4 rounded-md`}>
+      className={`border border-gray p-4 rounded-md mb-1`}>
       <p>Component: {displayName}</p>
       {step === 1 ?
         <>

@@ -1,6 +1,8 @@
 import createServiceClient from "@/utils/supabase/service";
 import EditOnboardingContainer from "@/features/admin/containers/EditOnboarding.Container";
 
+export const dynamic = "force-dynamic"
+
 export default async function AdminPage() {
 
   const supabase = createServiceClient();

@@ -14,7 +14,6 @@ export default function AuthDetails() {
     e.preventDefault();
     const currentTarget = e.currentTarget;
     try {
-      // console.log(name, value);
       const formData = new FormData(currentTarget);
       const form = Object.fromEntries(formData.entries());
 

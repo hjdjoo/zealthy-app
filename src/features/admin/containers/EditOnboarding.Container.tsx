@@ -62,33 +62,6 @@ export default function EditOnboardingContainer(props: OnboardingContainerProps)
     </div>
   ))
 
-
-  // componentData.forEach((step, idx) => {
-
-  //   const currStep = step.onboarding_step
-  //   const component = (
-  //     <div key={`edit-onboarding-component-${idx + 1}`}>
-  //       <p className={`text-xl font-bold`}>
-  //         {step.onboarding_step ? `Onboarding Step ${step.onboarding_step}: ` : `Unassigned: `}
-  //       </p>
-  //       <EditOnboardingStep
-  //         maxSteps={maxSteps}
-  //         step={step.onboarding_step}
-  //         component={step.name} />
-  //     </div>
-  //   )
-
-  //   if (currStep) {
-  //     if (onboardingStepsDisplay[currStep - 1]) {
-  //       onboardingStepsDisplay[currStep - 1].push(component)
-  //     } else {
-  //       onboardingStepsDisplay[currStep - 1] = [component]
-  //     }
-  //   } else {
-  //     unassignedComponents.push(component);
-  //   }
-  // })
-
   return (
     <>
       {onboardingStepsDisplay}

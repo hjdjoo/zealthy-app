@@ -36,8 +36,6 @@ export default function OnboardingContainer(props: OnboardingContainerProps) {
       formData.append("completed_steps", String(step + 1))
       const form = Object.fromEntries(formData.entries());
 
-      console.log(form);
-
       const supabase = createClientSupabase();
 
       const { error } = await supabase
